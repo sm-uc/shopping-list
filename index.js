@@ -3,7 +3,7 @@ $(function(){
     $("#js-shopping-list-form").on('submit',function(event){
  event.preventDefault();
 
- let newItem = $(event.currentTarget).find('input[name="shopping-list-entry"]').val();
+ let newItem = $(this).find('input[name="shopping-list-entry"]').val();
  console.log(newItem);
  let itemHtml = `<li>
  <span class="shopping-item">${newItem}</span>
@@ -26,9 +26,9 @@ $(function(){
 // On check button click
 $('.shopping-list').on('click','.shopping-item-toggle',function(event){
    
-    $(event.currentTarget).closest('li').children('span').hasClass('shopping-item__checked')?
-    $(event.currentTarget).closest('li').children('span').removeClass('shopping-item__checked'):
-    $(event.currentTarget).closest('li').children('span').addClass('shopping-item__checked')
+    $(this).closest('li').children('span').hasClass('shopping-item__checked')?
+    $(this).closest('li').children('span').removeClass('shopping-item__checked'):
+    $(this).closest('li').children('span').addClass('shopping-item__checked')
 });
 
 
